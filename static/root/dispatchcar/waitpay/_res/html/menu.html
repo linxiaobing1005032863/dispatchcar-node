@@ -1,0 +1,26 @@
+<ul class="list">
+    <li ng-click="list()" ng-class="{'current':menuClass=='listMenu'}" ui-sref=".list[12]"  ng-show="LIST"  ng-init="menuCheck('LIST')">
+        <a href="javascript:void(0)" class="lis">列表</a>
+    </li>
+    <li ng-click="audit()" ng-class="{'current':menuClass=='auditMenu','seeParent':idListd}"   ng-show="AUDIT" ng-init="menuCheck('AUDIT')">
+        <a href="javascript:void(0)" class="same-one see" >审核详情</a>
+    </li>
+    <li ng-click="pay()" ng-class="{'current':menuClass=='payMenu','seeParent':idListd}"   ng-show="ADD" ng-init="menuCheck('ADD')">
+        <a href="javascript:void(0)" class="same-one see">付款</a>
+    </li>
+    <li ng-click="principalsugg()" ng-class="{'current':menuClass=='principalsuggMenu','seeParent':idListd}"  ng-show="AUDIT"  ng-init="menuCheck('AUDIT')">
+        <a href="javascript:void(0)" class="same-two see" >核对分析</a>
+    </li>
+    <li ng-click="export()" ng-class="{'current':menuClass=='exportMenu'}" ui-sref=".export[12]"  ng-show="EXPORT"   ng-init="menuCheck('EXPORT')">
+        <a href="javascript:void(0)" class="same-one" >导出</a>
+    </li>
+    <li ng-click="change()" ng-class="{'current':menuClass=='changeMenu'}" ui-sref=".change[12]" ng-show="AUDIT"   ng-init="menuCheck('AUDIT')">
+        <a href="javascript:void(0)" class="lis">核对修改记录</a>
+    </li>
+    <li ng-click="view()" ng-class="{'current':menuClass=='viewMenu','seeParent':idListd}"  ng-show="SEE"   ng-init="menuCheck('SEE')">
+        <a href="javascript:void(0)" class="same-two see" >查看附件</a>
+    </li>
+    <li ng-click="payMoney()" ng-class="{'current':menuClass=='payMoneyMenu'}" ui-sref=".payMoney[12]" ng-show="COLLECT"   ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)" class="add">支付司机金额汇总</a>
+    </li>
+</ul>

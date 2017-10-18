@@ -1,0 +1,34 @@
+<div class="content-input add" verify-scope="tipStyle: 1">
+    <div class="input-list">
+        <section>
+            <ul>
+                <li ng-show="stt">
+                    <input type="text"  class="inputDom" ng-model="collectType" ng-verify="{}">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>汇总日期间隔</em></label>
+                    <input type="text"  ng-model="typeTO"  value="DAY" disabled>
+                 </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>汇总时间</em></label>
+                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="date-icon exportDay" ng-model="exportDay">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>汇总类型</em></label>
+                    <select class="sele" ng-model="collectType">
+                        <option value="AREA">地区</option>
+                        <option value="DRIVER">司机</option>
+                    </select>
+                </li>
+            </ul>
+        </section>
+    </div>
+    <p class="dataBottom">
+        <button ng-verify="{control:'myform'}" ng-click="exportRe()">导出</button>
+    </p>
+</div>
+<script type="text/javascript">
+    !function(){
+        laydate.skin('dahong');//切换皮肤，请查看skins下面皮肤库
+    }()
+</script>

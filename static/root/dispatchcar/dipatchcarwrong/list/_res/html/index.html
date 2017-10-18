@@ -1,0 +1,302 @@
+<div class="content-tab list">
+    <div class="search-big" style="display :{{ isView?'none':'block'}}">
+        <select class="salc" ng-model="checkedName" ng-init="checkedName='用车人'">
+            <option ng-repeat="item in titles track by $index">{{item}}</option>
+        </select>
+        <input type="text" ng-model="carUser" ng-show="checkedName=='用车人'">
+        <input type="text" ng-model="number" ng-show="checkedName=='出车单号'">
+        <a href="javascript:void(0)" ng-click="search()"><img src="/images/search2.png"></a>
+    </div>
+    <ul class="table">
+        <li class="list-head">
+            <span></span>
+            <span>出车单号</span>
+            <span>司机名称</span>
+            <span>是否为本公司人员出车</span>
+            <span>用车人</span>
+            <span>员工编号</span>
+            <span>所属地区</span>
+            <span>所属项目组</span>
+            <span></span>
+        </li>
+        <li class="list-all" ng-repeat="lists in mailLists" style="display: {{lists._delete?'none':'block'}};">
+            <section class="{{lists.status=='CONGEAL'?'congeal':''}}">
+                <div class="list-text {{lists._selectList?'selectList':''}}" ng-click="selectList(lists)">
+                    <p mod>{{$index+1+num}}</p>
+                    <p mod>{{::lists.number}}</p>
+                    <p mod>{{::lists.driver}}</p>
+                    <p mod>{{::lists.companyDispatch|pay}}</p>
+                    <p mod>{{::lists.carUser}}</p>
+                    <p mod>{{::lists.userNumber}}</p>
+                    <p mod>{{::lists.area}}</p>
+                    <p mod>{{::lists.group}}</p>
+                    <p>
+                        <a href="javascript:void(0)" class="more" ng-click="moreList(lists)">更多详细</a>
+                    </p>
+                </div>
+                <div class="can">
+                    <ul class="can-see" style="display: {{lists._moreList?'block':'none'}};">
+                        <li>
+                            <p class="see-parent">
+                                <span>是否立项</span>
+                                <span>项目名称</span>
+                                <span>科目类型</span>
+                                <span>出车日期</span>
+                                <span>出车开始时间</span>
+                                <span>出车结束时间</span>
+                                <span>是否午休</span>
+                                <span>加班时长</span>
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.projectApproval|pay}}</span>
+                                <span mod>{{::lists.project}}</span>
+                                <span mod>{{::lists.acctype|addCover}}</span>
+                                <span mod>{{::lists.dispatchDate}}</span>
+                                <span mod>{{::lists.startTime}}</span>
+                                <span mod>{{::lists.endTime}}</span>
+                                <span mod>{{::lists.siesta|pay}}</span>
+                                <span mod>{{::lists.overWorkTime}}</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="see-parent">
+                                <span>用车事由</span>
+                                <span>用车随同人员</span>
+                                <span>车牌号码</span>
+                                <span>所用油卡编号</span>
+                                <span>是否开空调</span>
+                                <span>是否市内</span>
+                                <span>当天是否加油</span>
+                                <span>补加油说明</span>
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.dispatchReason}}</span>
+                                <span mod>{{::lists.accompanyUser}}</span>
+                                <span mod>{{::lists.carNumber}}</span>
+                                <span mod>{{::lists.oilCardNumber}}</span>
+                                <span mod>{{::lists.aircondition}}</span>
+                                <span mod>{{::lists.downtown|pay}}</span>
+                                <span mod>{{::lists.addOil|pay}}</span>
+                                <span mod>{{::lists.addOilExplain}}</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="see-parent">
+                                <span>补加油量</span>
+                                <span>补加油费</span>
+                                <span>欠油说明</span>
+                                <span>欠油量</span>
+                                <span>欠油费</span>
+                                <span>加油时间</span>
+                                <span>实际加油量</span>
+                                <span>油卡余额</span>
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.supplementOil}}</span>
+                                <span mod>{{::lists.supplementFee}}</span>
+                                <span mod>{{::lists.oweOilExplain}}</span>
+                                <span mod>{{::lists.lessOil}}</span>
+                                <span mod>{{::lists.lessOilFee}}</span>
+                                <span mod>{{::lists.addOilTime}}</span>
+                                <span mod>{{::lists.addOilAmount}}</span>
+                                <span mod>{{::lists.oilCardBalance}}</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="see-parent">
+                                <span>当天油价</span>
+                                <span>任务下达人</span>
+                                <span>计划任务数量</span>
+                                <span>完成任务数量</span>
+                                <span>出车开始里程数</span>
+                                <span>出车结束里程数</span>
+                                <span>总里程数</span>
+                                <span>GPS轨迹里程数</span>
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.oilPrice}}</span>
+                                <span mod>{{::lists.principal}}</span>
+                                <span mod>{{::lists.planTaskAmount}}</span>
+                                <span mod>{{::lists.finishTaskAmount}}</span>
+                                <span mod>{{::lists.startMileage}}</span>
+                                <span mod>{{::lists.endMileage}}</span>
+                                <span mod>{{::lists.mileageSubtract}}</span>
+                                <span mod>{{::lists.mileageOfGPS}}</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="see-parent">
+                                <span>停车费</span>
+                                <span>过路费</span>
+                                <span>对司机的评价</span>
+                                <span>小票附件</span>
+                                <span>项目模块负责人</span>
+                                <span>项目模块负责人意见</span>
+                                <span>是否通过</span>
+                                <span>项目模块负责人</span>
+
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.parkCost}}</span>
+                                <span mod>{{::lists.roadCost}}</span>
+                                <span mod>{{::lists.evaluatedriver|driver}}</span>
+                                <span mod>{{::lists.receipt}}</span>
+                                <span mod>{{::lists.projectCharge}}</span>
+                                <span mod>{{::lists.projectChargeIdea}}</span>
+                                <span mod>{{::lists.ifPass|apy}}</span>
+                                <span mod>{{::lists.projectCharge}}</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="see-parent">
+                                <span>客户模块负责人</span>
+                                <span>客户模块负责人意见</span>
+                                <span>客户模块负责核对时间</span>
+                                <span>是否冻结</span>
+                                <span>素养模块负责人</span>
+                                <span>素养模块负责人意见</span>
+                                <span>素养模块负责人核对时间</span>
+                                <span>预算模块负责人</span>
+
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.clientModule}}</span>
+                                <span mod>{{::lists.clientModuleIdea}}</span>
+                                <span mod>{{::lists.clientDate}}</span>
+                                <span mod>{{::lists.ifFreeze|pay}}</span>
+                                <span mod>{{::lists.headModule}}</span>
+                                <span mod>{{::lists.headModuleIdea}}</span>
+                                <span mod>{{::lists.headDate}}</span>
+                                <span mod>{{::lists.budgetAuditUser}}</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="see-parent">
+                                <span>预算模块意见</span>
+                                <span>预算模块负责人核对时间</span>
+                                <span>账务模块负责人</span>
+                                <span>账务模块意见</span>
+                                <span>账务模块负责人核对时间</span>
+                                <span>核对依据是否齐全无误</span>
+                                <span>寄件人</span>
+                                <span>寄件日期</span>
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.budgetModuleIdea}}</span>
+                                <span mod>{{::lists.budgetAuditTime}}</span>
+                                <span mod>{{::lists.accountModule}}</span>
+                                <span mod>{{::lists.accountModuleIdea}}</span>
+                                <span mod>{{::lists.accountDate}}</span>
+                                <span mod>{{::lists.isCorrect|pay}}</span>
+                                <span mod>{{::lists.sender}}</span>
+                                <span mod>{{::lists.sendDate}}</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="see-parent">
+                                <span>存档联是否寄件</span>
+                                <span>报销联是否寄件</span>
+                                <span>过路停车费总额</span>
+                                <span>小票总数</span>
+                                <span>加油小票是否寄件</span>
+                                <span>收票人</span>
+                                <span>收到发票日期</span>
+                                <span>收到发票情况</span>
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.ifSendArchiveAL|pay}}</span>
+                                <span mod>{{::lists.ifSendReimbursementAl|pay}}</span>
+                                <span mod>{{::lists.totalParking}}</span>
+                                <span mod>{{::lists.totalReceipts}}</span>
+                                <span mod>{{::lists.ifSendAddOilReceipts|pay}}</span>
+                                <span mod>{{::lists.receiver}}</span>
+                                <span mod>{{::lists.receiveDate}}</span>
+                                <span mod>{{::lists.receiveReceipts}}</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="see-parent">
+                                <span>资金模块负责人</span>
+                                <span>资金模块意见</span>
+                                <span>资金模块负责人审核时间</span>
+                                <span>预计付款日期</span>
+                                <span>付款计划</span>
+                                <span>是否付款</span>
+                                <span>租车费用</span>
+                                <span>数据状态</span>
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.moneyModule}}</span>
+                                <span mod>{{::lists.moneyModuleIdea}}</span>
+                                <span mod>{{::lists.moneyDate}}</span>
+                                <span mod>{{::lists.expectPayDate}}</span>
+                                <span mod>{{::lists.paymentSchedule}}</span>
+                                <span mod>{{::lists.ifPayed|pay}}</span>
+                                <span mod>{{::lists.carRentalCost}}</span>
+                                <span mod>{{::lists.status|staTus}}</span>
+                            </p>
+                        </li>
+                        <li>
+                            <p class="see-parent">
+                                <span>任务下达人审核时间</span>
+                                <span>查询类型</span>
+                                <span>加班费</span>
+                                <span>金额</span>
+                            </p>
+                            <p class="see-children">
+                                <span mod>{{::lists.totalReceipts}}</span>
+                                <span mod>{{::lists.ifSendAddOilReceipts}}</span>
+                                <span mod>{{::lists.receiver}}</span>
+                                <span mod>{{::lists.receiveDate}}</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="thaw-modal">
+                    <button ng-click="thaw(lists)">解冻</button>
+                </div>
+            </section>
+        </li>
+    </ul>
+    <div class="module">
+        <div class="see-module">
+            <p class="see-type">体现类型</p>
+            <p class="see-description"></p>
+            <button class="btn" modclose>关闭</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <pagination count="custom.itemsCount" take="custom.take" activate="custom.activatePage"></pagination>
+    </footer>
+</div>
+<div class="delete mod" ng-show="congealShow">
+    <div class="del-head">
+        <h5>温馨提示</h5>
+    </div>
+    <div class="del-con">
+        <p>确定要冻结这条数据？</p>
+        <div class="btn">
+            <button ng-click="conFn()">确定</button>
+            <button ng-click="conCancel()">取消</button>
+        </div>
+    </div>
+</div>
+<div id="modalbg" ng-show="delShow||congealShow"></div>
+<!--<div class="delete mod" ng-show="delShow">
+    <div class="del-head">
+        <h5>温馨提示</h5>
+    </div>
+    <div class="del-con">
+        <p>确定要删除这条数据？</p>
+        <div class="btn">
+            <button ng-click="delFn()">确定</button>
+            <button ng-click="cancel()">取消</button>
+        </div>
+    </div>
+</div>
+
+-->
+
+
+
+

@@ -1,0 +1,202 @@
+<div class="content-tab audit-lists">
+    <ul class="table">
+        <li class="list-head">
+            <span>出车单号</span>
+            <span>司机名称</span>
+            <span>是否为本公司人员出车</span>
+            <span>用车人</span>
+            <span>员工编号</span>
+            <span>所属地区</span>
+            <span>所属项目组</span>
+            <span>是否立项</span>
+            <span>项目名称</span>
+            <span>科目类型</span>
+        </li>
+        <li class="list-body">
+            <span>{{list.number}}</span>
+            <span>{{list.driver}}</span>
+            <span>{{list.companyDispatch|pay}}</span>
+            <span>{{list.carUser}}</span>
+            <span>{{list.userNumber}}</span>
+            <span>{{list.area}}</span>
+            <span>{{list.group}}</span>
+            <span>{{list.projectApproval|pay}}</span>
+            <span>{{list.project}}</span>
+            <span>{{list.acctype|addCover}}</span>
+        </li>
+        <li class="list-head">
+            <span>出车日期</span>
+            <span>出车开始时间</span>
+            <span>出车结束时间</span>
+            <span>是否午休</span>
+            <span>加班时长</span>
+            <span>用车事由</span>
+            <span>用车随同人员</span>
+            <span>车牌号码</span>
+            <span>所用油卡编号</span>
+            <span>是否开空调</span>
+        </li>
+        <li class="list-body">
+            <span>{{list.dispatchDate}}</span>
+            <span>{{list.startTime}}</span>
+            <span>{{list.endTime}}</span>
+            <span>{{list.siesta|pay}}</span>
+            <span>{{list.overWorkTime}}</span>
+            <span>{{list.dispatchReason}}</span>
+            <span>{{list.accompanyUser}}</span>
+            <span>{{list.carNumber}}</span>
+            <span>{{list.oilCardNumber}}</span>
+            <span>{{list.aircondition|pay}}</span>
+        </li>
+        <li class="list-head">
+            <span>是否市内</span>
+            <span>当天是否加油</span>
+            <span>补加油说明</span>
+            <span>补加油量</span>
+            <span>补加油费</span>
+            <span>欠油说明</span>
+            <span>欠油量</span>
+            <span>欠油费</span>
+            <span>加油时间</span>
+            <span>实际加油量</span>
+        </li>
+        <li class="list-body">
+            <span>{{list.downtown|pay}}</span>
+            <span>{{list.addOil|pay}}</span>
+            <span>{{list.addOilExplain}}</span>
+            <span>{{list.addOilAmount}}</span>
+            <span>{{list.overWorkCost}}</span>
+            <span>{{list.oweOilExplain}}</span>
+            <span>{{list.addOilAmount}}</span>
+            <span>{{list.oilCost}}</span>
+            <span>{{list.addOilTime}}</span>
+            <span>{{list.addOilAmount}}</span>
+        </li>
+        <li class="list-head">
+            <span>油卡余额</span>
+            <span>当天油价</span>
+            <span>任务下达人</span>
+            <span>计划任务数量</span>
+            <span>完成任务数量</span>
+            <span>出车开始里程数</span>
+            <span>出车结束里程数</span>
+            <span>总里程数</span>
+            <span>GPS轨迹里程数</span>
+            <span>停车费</span>
+        </li>
+        <li class="list-body">
+            <span>{{list.oilCardBalance}}</span>
+            <span>{{list.oilPrice}}</span>
+            <span>{{list.principal}}</span>
+            <span>{{list.planTaskAmount}}</span>
+            <span>{{list.finishTaskAmount}}</span>
+            <span>{{list.startMileage}}</span>
+            <span>{{list.endMileage}}</span>
+            <span>{{list.mileageSubtract}}</span>
+            <span>{{list.mileageOfGPS}}</span>
+            <span>{{list.parkCost}}</span>
+        </li>
+        <li class="list-head">
+            <span>过路费</span>
+            <span>餐补费</span>
+            <span>司机的评价</span>
+            <span>项目模块负责人</span>
+            <span>项目模块负责人意见</span>
+            <span>是否通过</span>
+            <span>项目经理</span>
+            <span>预算模块意见</span>
+            <span>账务模块意见</span>
+            <span>核对依据是否齐全无误</span>
+        </li>
+        <li class="list-body">
+            <span>{{list.roadCost}}</span>
+            <span>{{list.mealCost}}</span>
+            <span>{{list.evaluatedriver|driver}}</span>
+            <span>{{list.projectCharge}}</span>
+            <span>{{list.projectChargeIdea|pay}}</span>
+            <span>{{list.ifPass}}</span>
+            <span>{{list.projectCharge}}</span>
+            <span>{{list.projectCharge}}</span>
+            <span>{{list.accountModuleIdea}}</span>
+            <span>{{list.isCorrect|pay}}</span>
+        </li>
+        <li class="list-head">
+            <span>寄件人</span>
+            <span>寄件日期</span>
+            <span>存档联是否寄件</span>
+            <span>报销联是否寄件</span>
+            <span>小票总数</span>
+            <span>加油小票是否寄件</span>
+            <span>收票人</span>
+            <span>收到发票日期</span>
+            <span>收到发票情况</span>
+            <span>资金模块意见</span>
+        </li>
+        <li class="list-body">
+            <span>{{list.sender}}</span>
+            <span>{{list.sendDate}}</span>
+            <span>{{list.ifSendArchiveAL|pay}}</span>
+            <span>{{list.ifSendReimbursementAl|pay}}</span>
+            <span>{{list.totalReceipts}}</span>
+            <span>{{list.ifSendAddOilReceipts|pay}}</span>
+            <span>{{list.receiver}}</span>
+            <span>{{list.receiveDate}}</span>
+            <span>{{list.receiveReceipts}}</span>
+            <span>{{list.moneyModuleIdea}}</span>
+        </li>
+        <li class="list-head">
+            <span>预计付款日期</span>
+            <span>付款计划</span>
+            <span>是否付款</span>
+            <span></span>
+            <span></span><span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+
+
+        </li>
+        <li class="list-body">
+            <span>{{list.paymentSchedule}}</span>
+            <span>{{list.ifPayed}}</span>
+            <span>{{list.carRentalCost|pay}}</span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </li>
+    </ul>
+    <div class="content-input add" verify-scope="tipStyle: 1">
+        <div class="input-list">
+            <section>
+                <ul>
+                    <li class="required">
+                        <label><i><img src="/images/mandatory.png"></i><em>资金模块意见</em></label>
+                        <input type="text"  ng-verify="{}" ng-model="moneyModuleIdea">
+                    </li>
+                     <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>预计付款日期</em></label>
+                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="add_image expectPayDate" ng-model="expectPayDate" >
+                    </li>
+                    <li class="required">
+                        <label><i><img src="/images/mandatory.png"></i><em>问题类型</em></label>
+                        <input type="text"  ng-verify="{}" ng-model="problemType">
+                    </li>
+                    <li class="required">
+                        <label><i><img src="/images/mandatory.png"></i><em>问题描述</em></label>
+                        <input type="text"  ng-verify="{}" ng-model="problemDes">
+                    </li>
+                    
+                </ul>
+            </section>
+        </div>
+        <p class="dataBottom">
+            <span class="imPrompt"><i><img src="/images/prompt.png"></i>带有<i><img src="/images/mandatory.png"></i>的为必填项</span>
+            <button ng-verify="{control:'myform'}" ng-click="infoEditFun()">提交</button>
+        </p>
+    </div>
+</div>

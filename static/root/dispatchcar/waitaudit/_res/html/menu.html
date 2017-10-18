@@ -1,0 +1,20 @@
+<ul class="list">
+    <li ng-click="list()" ng-class="{'current':menuClass=='listMenu'}" ui-sref=".list[12]" ng-show="LIST" ng-init="menuCheck('LIST')">
+        <a href="javascript:void(0)" class="lis">列表</a>
+    </li>
+    <li ng-click="view()" ng-class="{'current':menuClass=='viewMenu','seeParent':idListd}"  ng-show="SEEFILE"  ng-init="menuCheck('SEEFILE')">
+        <a href="javascript:void(0)" class="same-one see" >查看附件</a>
+    </li>
+    <li ng-click="audit()" ng-class="{'current':menuClass=='auditMenu','seeParent':idListd}" ng-show="AUDIT"   ng-init="menuCheck('AUDIT')">
+        <a href="javascript:void(0)" class="same-two see" >审核详情</a>
+    </li>
+    <li ng-click="budget()" ng-class="{'current':menuClass=='budgetMenu','seeParent':idListd}"  ng-show="SEEFILE"   ng-init="menuCheck('SEEFILE')">
+        <a href="javascript:void(0)" class="same-three see" >核对分析</a>
+    </li>
+    <li ng-click="principalsugg()" ng-class="{'current':menuClass=='principalsuggMenu','seeParent':idListd}" ng-show="AUDIT"   ng-init="menuCheck('AUDIT')">
+        <a href="javascript:void(0)" class="same-two see" >审核</a>
+    </li>
+    <li ng-click="changecar()" ng-class="{'current':menuClass=='changecarMenu'}" ui-sref=".changecar[12]"  ng-show="AUDIT"  ng-init="menuCheck('AUDIT')">
+        <a href="javascript:void(0)" class="lis">核对修改记录</a>
+    </li>
+</ul>

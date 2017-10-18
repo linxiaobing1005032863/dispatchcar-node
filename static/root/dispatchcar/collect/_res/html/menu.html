@@ -1,0 +1,23 @@
+<ul class="list">
+  <li ng-click="dispatchCollect()" ng-class="{'current':menuClass=='dispatchCollectMenu'}" ui-sref=".dispatchCollect[12]"  ng-show="COLLECT"  ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)"  class="same-one">出车情况汇总 </a>
+    </li>
+    <li ng-click="driverCollect()" ng-class="{'current':menuClass=='driverCollectMenu'}" ui-sref=".driverCollect[12]"  ng-show="COLLECT"  ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)"  class="same-one">司机出车情况汇总 </a>
+    </li>
+    <li ng-click="export()" ng-class="{'current':menuClass=='exportMenu'}" ui-sref=".export[12]"  ng-show="COLLECT"  ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)"  class="same-one">日汇总导出</a>
+    </li>
+    <li ng-click="weekExport()" ng-class="{'current':menuClass=='weekExportMenu'}" ui-sref=".weekExport[12]"  ng-show="COLLECT"  ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)"  class="same-one">周汇总导出</a>
+    </li>
+    <li ng-click="monthExport()" ng-class="{'current':menuClass=='monthExportMenu'}" ui-sref=".monthExport[12]"  ng-show="COLLECT"  ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)"  class="same-one">月汇总导出</a>
+    </li>
+    <li ng-click="quarterExport()" ng-class="{'current':menuClass=='quarterExportMenu'}" ui-sref=".quarterExport[12]"  ng-show="COLLECT"  ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)"  class="same-one">季度汇总导出</a>
+    </li>
+    <li ng-click="yearExport()" ng-class="{'current':menuClass=='yearExportMenu'}" ui-sref=".yearExport[12]"  ng-show="COLLECT"  ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)"  class="same-one">年汇总导出</a>
+    </li>
+</ul>

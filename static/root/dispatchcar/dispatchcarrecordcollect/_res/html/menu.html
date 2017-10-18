@@ -1,0 +1,14 @@
+<ul class="list">
+  <li ng-click="dayCollect()" ng-class="{'current':menuClass=='dayCollectMenu'}" ui-sref=".dayCollect[12]"  ng-show="COLLECT"  ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)"  class="same-one">出车记录管理日汇总 </a>
+    </li>
+    <li ng-click="weekCollect()" ng-class="{'current':menuClass=='weekCollectMenu'}" ui-sref=".weekCollect[12]" ng-show="COLLECT"  ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)"  class="same-one">出车记录管理周汇总 </a>
+    </li>
+    <li ng-click="monthCollect()" ng-class="{'current':menuClass=='monthCollectMenu'}" ui-sref=".monthCollect[12]" ng-show="COLLECT"  ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)"  class="same-one">出车记录管理月汇总 </a>
+    </li>
+    <li ng-click="allCollect()" ng-class="{'current':menuClass=='allCollectMenu'}" ui-sref=".allCollect[12]" ng-show="COLLECT"  ng-init="menuCheck('COLLECT')">
+        <a href="javascript:void(0)"  class="same-one">出车记录管理累计汇总 </a>
+    </li>
+</ul>

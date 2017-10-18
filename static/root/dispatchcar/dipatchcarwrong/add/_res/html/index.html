@@ -1,0 +1,246 @@
+<div class="content-input add" verify-scope="tipStyle: 1">
+    <div class="input-list">
+        <section>
+            <ul>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>司机姓名</em></label>
+                    <div class="sele side">
+                        <select class="sele" ng-model="driver">
+                            <option  ng-repeat="Dri in  infoDri">{{Dri.driver}}</option>
+                        </select>
+                        <input type="text"  class="inputDom" ng-verify="{}" ng-model="driver">
+                    </div>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>用车人</em></label>
+                    <div class="sele side">
+                        <select class="sele" ng-model="carUser">
+                            <option  ng-repeat="Ent in  infoEnt">{{Ent.username}}</option>
+                        </select>
+                        <input type="text"  class="inputDom" ng-verify="{}" ng-model="carUser">
+                    </div>
+                </li>
+
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>员工编号</em></label>
+                    <input type="number" ng-verify="{}" ng-model="userNumber">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>所属地区 </em></label>
+                    <div class="sele side">
+                        <select class="sele" ng-model="area">
+                            <option  ng-repeat="Ent in  infoEnt">{{Ent.area}}</option>
+                        </select>
+                        <input type="text"  class="inputDom" ng-verify="{}" ng-model="area">
+                    </div>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>所属项目组 </em></label>
+                    <div class="sele side">
+                        <select class="sele" ng-model="group">
+                            <option  ng-repeat="Ent in  infoEnt">{{Ent.department}}</option>
+                        </select>
+                        <input type="text"  class="inputDom" ng-verify="{}" ng-model="group">
+                    </div>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>项目名称 </em></label>
+                    <div class="sele side">
+                        <select class="sele" ng-model="project">
+                            <option  ng-repeat="ject in  infoPro">{{ject}}</option>
+                        </select>
+                        <input type="text"  class="inputDom" ng-verify="{}" ng-model="project">
+                    </div>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>科目类型</em></label>
+                    <select class="sele" ng-model="acctype" ng-verify="option:0">
+                        <option value="">请选择</option>
+                        <option value="MAIN">主营业务成本</option>
+                        <option value="MARKET">市场费</option>
+                        <option value="TRAINING">培训费</option>
+                    </select>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>出车日期</em></label>
+                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="add_image dispatchDate" >
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>出车开始时间</em></label>
+                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="add_image startTime" >
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>出车结束时间</em></label>
+                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="add_image endTime" >
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>是否午休</em></label>
+                    <select class="sele" ng-model="siesta" ng-verify="option:0">
+                        <option value="">请选择</option>
+                        <option ng-value=true>是</option>
+                        <option ng-value="false">否</option>
+                    </select>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>加班时长</em></label>
+                    <input type="number"   ng-verify="{}" ng-model="overWorkTime">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>用车随同人员</em></label>
+                    <div class="sele side">
+                        <select class="sele" ng-model="accompanyUser">
+                            <option value=""></option>
+                        </select>
+                        <input type="text"  class="inputDom" ng-verify="{}" ng-model="accompanyUser">
+                    </div>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>用车事由</em></label>
+                    <div class="sele side">
+                        <select class="sele" ng-model="dispatchReason">
+                            <option value="" ></option>
+                        </select>
+                        <input type="text"  class="inputDom" ng-verify="{}" ng-model="dispatchReason">
+                    </div>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>车牌号码 </em></label>
+                    <div class="sele side">
+                        <select class="sele" ng-model="carNumber">
+                            <option value="" ></option>
+                        </select>
+                        <input type="text"  class="inputDom" ng-verify="{}" ng-model="carNumber">
+                    </div>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>是否开空调</em></label>
+                    <select class="sele" ng-model="aircondition" ng-verify="option:0">
+                        <option value="">请选择</option>
+                        <option ng-value=true>是</option>
+                        <option ng-value="false">否</option>
+                    </select>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>是否市内</em></label>
+                    <select class="sele" ng-model="downtown" ng-verify="option:0">
+                        <option value="">请选择</option>
+                        <option ng-value=true>是</option>
+                        <option ng-value="false">否</option>
+                    </select>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>当天是否加油 </em></label>
+                    <select class="sele" ng-model="addOil" ng-verify="option:0">
+                        <option value="">请选择</option>
+                        <option ng-value=true>是</option>
+                        <option ng-value="false">否</option>
+                    </select>
+                </li>
+                <li>
+                    <label><em>补加油说明</em></label>
+                    <input type="text"  ng-model="addOilExplain">
+                </li>
+                <li >
+                    <label><em>欠油说明</em></label>
+                    <select class="sele" ng-model="oweOilExplain">
+                        <option value="">请选择</option>
+                        <option ng-value=true>是</option>
+                        <option ng-value="false">否</option>
+                    </select>
+                </li>
+                <!--<li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>所用油卡编号</em></label>
+                    <input type="number"  ng-verify="{}" ng-model="oilCardNumber">
+                </li>-->
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>所用油卡编号</em></label>
+                    <div class="sele side">
+                        <select class="sele" ng-model="oilCardNumber">
+                            <option  ng-repeat="OilS in  Oil">{{OilS.oilCardCode}}</option>
+                        </select>
+                        <input type="text"  class="inputDom" ng-verify="{}" ng-model="oilCardNumber">
+                    </div>
+                </li>
+                <li>
+                    <label><i><img src="/images/mandatory.png"></i><em>加油时间</em></label>
+                    <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD hh:mm:ss'})" class="add_image addOilTime" >
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>油卡余额</em></label>
+                    <input type="number"  ng-verify="{}" ng-model="oilCardBalance">
+                </li>
+                <li>
+                    <label><i><img src="/images/mandatory.png"></i><em>当天油价</em></label>
+                    <input type="number"  ng-model="oilPrice">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>任务下达人 </em></label>
+                    <div class="sele side">
+                        <select class="sele" ng-model="principal">
+                            <option value="" disabled>请选择</option>
+                        </select>
+                        <input type="text"  class="inputDom" ng-verify="{}" ng-model="principal">
+                    </div>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>计划任务数量</em></label>
+                    <input type="number"  ng-verify="{}" ng-model="planTaskAmount">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>任务完成数量</em></label>
+                    <input type="number"  ng-verify="{}" ng-model="finishTaskAmount">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>出车开始里程数</em></label>
+                    <input type="number"  ng-verify="{}" ng-model="startMileage">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>出车结束里程数</em></label>
+                    <input type="number"  ng-verify="{}" ng-model="endMileage">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>GPS轨迹总里程数</em></label>
+                    <input type="number"  ng-verify="{}" ng-model="mileageOfGPS">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>停车费</em></label>
+                    <input type="number"  ng-verify="{}" ng-model="parkCost">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>过路费</em></label>
+                    <input type="number"  ng-verify="{}" ng-model="roadCost">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>科目类型</em></label>
+                    <select class="sele" ng-model="evaluatedriver" ng-verify="option:0">
+                        <option value="">请选择</option>
+                        <option value="GOOD">优秀</option>
+                        <option value="WELL">良好</option>
+                        <option value="BAD">恶劣 </option>
+                    </select>
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em>实际加油量</em></label>
+                    <input type="number"  ng-verify="{}" ng-model="addOilAmount">
+                </li>
+                <li class="required">
+                    <label><i><img src="/images/mandatory.png"></i><em> 租车费用</em></label>
+                    <input type="number"  ng-verify="{}" ng-model="carRentalCost">
+                </li>
+            </ul>
+        </section>
+    </div>
+    <p class="dataBottom">
+        <span class="imPrompt"><i><img src="/images/prompt.png"></i>带有<i><img src="/images/mandatory.png"></i>的为必填项</span>
+        <button ng-verify="{control:'myform'}" ng-click="infoAddFun()">提交</button>
+    </p>
+</div>
+
+<script type="text/javascript">
+
+    !function(){
+        laydate.skin('dahong');//切换皮肤，请查看skins下面皮肤库
+    }();
+
+
+</script>

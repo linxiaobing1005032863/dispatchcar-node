@@ -1,0 +1,23 @@
+<ul class="list">
+    <li ng-click="list()" ng-class="{'current':menuClass=='listMenu'}" ui-sref=".list[12]"  ng-show="LIST"   ng-init="menuCheck('LIST')">
+        <a href="javascript:void(0)" class="lis">列表</a>
+    </li>
+    <li ng-click="congeal()" ng-class="{'current':menuClass=='congealMenu','seeParent':idListd}" ng-show="CONGEL"  ng-init="menuCheck('CONGEL')">
+        <a href="javascript:void(0)" class="same-three see">冻结</a>
+    </li>
+    <li ng-click="upload()" ng-class="{'current':menuClass=='uploadMenu','seeParent':idListd}"  ng-show="UPLOAD"  ng-init="menuCheck('UPLOAD')">
+        <a href="javascript:void(0)"  class="same-one see">上传附件</a>
+    </li>
+    <li ng-click="view()" ng-class="{'current':menuClass=='viewMenu','seeParent':idListd}"  ng-show="SEEFILE" ng-init="menuCheck('SEEFILE')">
+        <a href="javascript:void(0)" class="same-two see" >查看附件</a>
+    </li>
+    <li ng-click="import()" ng-class="{'current':menuClass=='importMenu'}" ui-sref=".import[12]" ng-show="IMPORT"  ng-init="menuCheck('IMPORT')">
+        <a href="javascript:void(0)" class="same-three" >导入</a>
+    </li>
+    <li ng-click="export()" ng-class="{'current':menuClass=='exportMenu'}" ui-sref=".export[12]"  ng-show="EXPORT"  ng-init="menuCheck('EXPORT')">
+        <a href="javascript:void(0)" class="same-one" >导出</a>
+    </li>
+    <li ng-click="mail()" ng-class="{'current':menuClass=='mailMenu','seeParent':idListd}" ng-show="EDIT" ng-init="menuCheck('EDIT')">
+        <a href="javascript:void(0)" class="same-one see" >寄件</a>
+    </li>
+</ul>

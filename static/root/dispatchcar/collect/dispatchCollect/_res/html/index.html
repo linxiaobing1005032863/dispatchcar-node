@@ -1,0 +1,55 @@
+<div class="collect">
+    <div class="sum-select">
+        <ul>
+            <li class="required">
+                <label><i><img src="/images/mandatory.png"></i><em>汇总日期间隔 </em></label>
+                <select class="sele select1" ng-model="type">
+                    <option value="">请选择</option>
+                    <option value="DAY">日</option>
+                    <option value="WEEK">周</option>
+                    <option value="MONTH">月</option>
+                    <option value="QUARTER">季度</option>
+                    <option value="YEAR">年度</option>
+                </select>
+            </li>
+            <li class="{{type?'a3':'a1'}}"  ng-click="collect()">汇总</li>
+        </ul>
+    </div>
+    <ul class="sum-list">
+        <li class="sum-thead">
+            <span>地区</span>
+            <span>项目组</span>
+            <span>项目名称</span>
+            <span>本公司用车量</span>
+            <span>非本公司用车量</span>
+            <span>本间隔出车量</span>
+            <span>上一间隔出车量</span>
+            <span>出车量差异对比</span>
+            <span>租车费</span>
+            <span>停车费</span>
+            <span>过路费</span>
+            <span>餐补费</span>
+            <span>本间隔费用</span>
+            <span>上一间隔费用</span>
+            <span>费用差异对比</span>
+
+        </li>
+        <li class="sum-tbody" ng-repeat="list in summaryLists">
+            <span title="{{list.area}}">{{list.area}}</span>
+            <span title="{{list.group}}">{{list.group}}</span>
+            <span title="{{list.project}}">{{list.project}}</span>
+            <span title="{{list.companyDispatch}}">{{list.companyDispatch}}</span>
+            <span title="{{list.uncompanyDispatch}}">{{list.uncompanyDispatch}}</span>
+            <span title="{{list.currentDispatch}}">{{list.currentDispatch}}</span>
+            <span title="{{list.lastDispatch}}">{{list.lastDispatch}}</span>
+            <span title="{{list.dispatchSubtract}}">{{list.dispatchSubtract}}</span>
+            <span title="{{list.leaseCarCost}}">{{list.leaseCarCost}}</span>
+            <span title="{{list.parkCarCost}}">{{list.parkCarCost}}</span>
+            <span title="{{list.roadCost}}">{{list.roadCost}}</span>
+            <span title="{{list.mealCost}}">{{list.mealCost}}</span>
+            <span title="{{list.currentCost}}">{{list.currentCost}}</span>
+            <span title="{{list.lastCost}}">{{list.lastCost}}</span>
+            <span title="{{list.costSubtract}}">{{list.costSubtract}}</span>
+        </li>
+    </ul>
+</div>

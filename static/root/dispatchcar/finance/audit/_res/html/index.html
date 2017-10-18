@@ -1,0 +1,22 @@
+<div class="content-tab audit-lists">
+    <ul class="table-two" >
+        <li class="list-head">
+            <span></span>
+            <span>职位名称</span>
+            <span>审核人</span>
+            <span>审核意见</span>
+            <span>审核时间</span>
+            <span>是否通过</span>
+            <span></span>
+        </li>
+        <li class="list-body">
+            <span></span>
+            <span>{{::lists.position}}</span>
+            <span>{{::lists.auditUser}}</span>
+            <span>{{::lists.suggestion}}</span>
+            <span>{{::lists.auditTime}}</span>
+            <span>{{::lists.auditResult|pay}}</span>
+            <span></span>
+        </li>
+    </ul>
+</div>

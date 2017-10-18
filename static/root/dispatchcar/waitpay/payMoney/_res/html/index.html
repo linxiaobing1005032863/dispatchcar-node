@@ -1,0 +1,41 @@
+<div class="collect">
+    <div class="collect-select">
+        <ul>
+            <li class="required">
+                <label><i><img src="/images/mandatory.png"></i><em>预计支付开始时间  </em></label>
+                <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="inputter startTime" ng-model="startTime" >
+            </li>
+            <li class="required">
+                <label><i><img src="/images/mandatory.png"></i><em>预计支付结束时间 </em></label>
+                <input type="text" onClick="laydate({istime: true, format: 'YYYY-MM-DD'})" class="inputter endTime" ng-model="endTime" >
+            </li>
+        </ul>
+        <button ng-click="collect()">汇总</button>
+    </div>
+    <ul class="sum-list">
+        <li class="sum-thead">
+            <span>司机名称</span>
+            <span>出车日期</span>
+            <span>租车费</span>
+            <span>加班单价</span>
+            <span>加班时长</span>
+            <span>加班费</span>
+            <span>停车费</span>
+            <span>过路费</span>
+            <span>餐费补贴</span>
+            <span>合计</span>
+
+        </li>
+        <li class="sum-tbody" ng-repeat="list in summaryLists">
+            <span title="{{list.driver}}">{{list.driver}}</span>
+            <span title="{{list.payDate}}">{{list.payDate}}</span>
+            <span title="{{list.carRentalCost}}">{{list.carRentalCost}}</span>
+            <span title="{{list.overUnitCost}}">{{list.overUnitCost}}</span>
+            <span title="{{list.overWorkTime}}">{{list.overWorkTime}}</span>
+            <span title="{{list.parkCost}}">{{list.parkCost}}</span>
+            <span title="{{list.roadCost}}">{{list.roadCost}}</span>
+            <span title="{{list.mealCost}}">{{list.mealCost}}</span>
+            <span title="{{list.totalCost}}">{{list.totalCost}}</span>
+        </li>
+    </ul>
+</div>
